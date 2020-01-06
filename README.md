@@ -22,13 +22,13 @@ These instructions will get you a copy of the project up and running on your loc
 * If you make all those changes and the Code does not have an error in the compilation process, you can start the module using the next function in this order to initiate the module:
 
 ```
-  // Start the ESP8266 module to start a UART communication
+	// Start the ESP8266 module to start a UART communication
 	Wifi_Enable();
+
 	// Initiation of the WiFi
-  // As you can see, the boolean variables is to make sure of 
-  // a correct process inside of every function
-	
-  if(Wifi_Init()==false)    
+	// As you can see, the boolean variables is to make sure of 
+	// a correct process inside of every function
+	if(Wifi_Init()==false)    
 		return false;
 ```
 * If there is no error in the compilation process until this moment, you can make a small code with those lines to test if the ESP8266 was intiaite (you can see that in the power LED and the TX and RX status). 
