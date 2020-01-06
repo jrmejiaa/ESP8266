@@ -15,9 +15,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 * Open STM32 CubeMX and create a project with the exact version of the STM32 Microcontroller that you are using. 
-* Config your USART port and enable interrupt on CubeMX.
+* Set up your USART port and enable interrupt on CubeMX.
 * Add the header file `#include <ESP8266.h>` in the `main.c` file of the created code by CubeMX.
-* Config your ESP8266Config.h file with the constants that you believe are better for your own project. Please make sure that you change ALL the parameters because there are some buttons (ENABLE and RST) in the ESP8266, which are necessary to start the module. 
+* Set up your `ESP8266Config.h` file with the constants that you believe are better for your own project. Please make sure that you change ALL the parameters because there are some buttons (ENABLE and RST) in the ESP8266, which are necessary to start the module. 
 * Add `Wifi_RxCallBack()` on **USART interrupt** routine. It is important that you search in the official documentation of your device, which are the steps to initiate the UART Interruptions. Normally, the start code from CubeMX is not complete. 
 * If you make all those changes and the Code does not have an error in the compilation process, you can start the module using the next function in this order to initiate the module:
 
