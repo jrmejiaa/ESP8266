@@ -36,7 +36,7 @@ if(Wifi_Init()==false)
 
 ## Deployment
 
-I am going to explain how the driver works and how you could create your own functions inside of the `ESP9266.c` file.
+I am going to explain how the driver works and how you could create your own functions inside of the `ESP8266.c` file.
 
 First of all, it uses the boolean type to ensure that the process inside of the function were finished without a problem. If you look inside of the created functions, they use a *timeout* for the response of the ESP8266 module, when this connection were not successful for any reason, the return value would be *false*. This makes easier the debugging process and it is one big help from the old version from nimaltd. 
 
