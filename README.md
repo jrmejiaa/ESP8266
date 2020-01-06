@@ -1,7 +1,7 @@
 # ESP8266
 AT Command driver to use the ESP8266. This driver was focused in a STM32 but it can be used with any UART Connection who supports C coding with small changes.
 
-# ESO8266 Driver to STM32 with UART Interruptions
+# ESP8266 Driver to STM32 with UART Interruptions
 
 AT Command driver to use the ESP8266. This driver was focused in a STM32 but it can be used with any UART Connection who supports C coding with small changes. The driver was developed taking count the interruptions possible in the UART of the STM32 Microcontroller. The ESP8266 driver was developed based on the old version driver of nimaltd [nimaltd](https://github.com/nimaltd/ESP8266), without the guidance of this version, it would not be possible to make it. Thank you nimaltd.
 
