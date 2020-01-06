@@ -55,7 +55,7 @@ This is the big idea of how all the functions were created, according to your ne
 
 ## Authors
 
-* **Jairo Mejia** - *Work for the new version without FreeRTOS and comments of the old version for a better understanding* - [jrmejiaa](https://github.com/jrmejiaa)
+* **Jairo Mejia** - *Work for the new version without FreeRTOS* - [jrmejiaa](https://github.com/jrmejiaa)
 * **Nima Askari** - *Initial work* - [nimaltd](https://github.com/nimaltd)
 
 ## License
