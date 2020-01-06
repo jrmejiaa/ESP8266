@@ -49,7 +49,7 @@ if(Wifi_WaitForString(_WIFI_WAIT_TIME_VERYHIGH,&result,3,"\r\nOK\r\n","\r\nERROR
 if(result > 1)		// If the result is higher to 1 is because there were an error
 	break;		// in the communication
 ```
-It uses an internal function *Wifi_SendString* to send the array TX_Buffer through the UART port. Then it uses another function *Wifi_WaitForString* to make sure that there was one of the responses in the RX_Buffer that there are inputs of the function. Finally, if the variable *result* is greater than 1, it means that the response was “ERROR”. In that case, it was an error in the process and the function would return *false*. 
+It uses an internal function `Wifi_SendString` to send the array `TX_Buffer` through the UART port. Then it uses another function `Wifi_WaitForString` to make sure that there was one of the responses in the `RX_Buffer` that there are inputs of the function. Finally, if the variable *result* is greater than 1, it means that the response was “ERROR”. In that case, it was an error in the process and the function would return *false*. 
 
 This is the big idea of how all the functions were created, according to your needs, you can create your own functions based on this model and the datasheet for the *AT Commands*, however, the most useful functions were already created.
 
