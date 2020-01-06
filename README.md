@@ -31,7 +31,7 @@ Wifi_Enable();
 if(Wifi_Init()==false)    
 	return false;
 ```
-* If there is no error in the compilation process until this moment, you can make a small code with those lines to test if the ESP8266 was intiaite (you can see that in the power LED and the TX and RX status). 
+* If there is no error in the compilation process until this moment, you can make a small code with those lines to test if the ESP8266 was initiated (you can see that in the power LED and the TX and RX status). 
 * With the successful connection of the ESP8266 module, you can use the function that you see in the header `ESP8266.h` to make a connection with a WiFi network or create one using the needed commands. To make sure a successful connection, please refer to the datasheet of the module. 
 
 ## Deployment
