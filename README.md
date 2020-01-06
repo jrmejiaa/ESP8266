@@ -16,32 +16,32 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Open STM32 CubeMX and create a project with the exact version of the STM32 Microcontroller that you are using. 
 * Config your USART port and enable interrupt on CubeMX.
-* Add the header file **#include <ESP8266.h>** in the **main.c** file of the created code by CubeMX.
+* Add the header file `#include <ESP8266.h>` in the `main.c` file of the created code by CubeMX.
 * Config your ESP8266Config.h file with the constants that you believe are better for your own project. Please make sure that you change ALL the parameters because there are some buttons (ENABLE and RST) in the ESP8266, which are necessary to start the module. 
-* Add Wifi_RxCallBack() on **USART interrupt** routine. It is important that you search in the official documentation of your device, which are the steps to initiate the UART Interruptions. Normally, the start code from CubeMX is not complete. 
+* Add `Wifi_RxCallBack()` on **USART interrupt** routine. It is important that you search in the official documentation of your device, which are the steps to initiate the UART Interruptions. Normally, the start code from CubeMX is not complete. 
 * If you make all those changes and the Code does not have an error in the compilation process, you can start the module using the next function in this order to initiate the module:
 
-```
-	// Start the ESP8266 module to start a UART communication
-	Wifi_Enable();
+```C
+// Start the ESP8266 module to start a UART communication
+Wifi_Enable();
 
-	// Initiation of the WiFi
-	// As you can see, the boolean variables is to make sure of 
-	// a correct process inside of every function
-	if(Wifi_Init()==false)    
-		return false;
+// Initiation of the WiFi
+// As you can see, the boolean variables is to make sure of 
+// a correct process inside of every function
+if(Wifi_Init()==false)    
+	return false;
 ```
 * If there is no error in the compilation process until this moment, you can make a small code with those lines to test if the ESP8266 was intiaite (you can see that in the power LED and the TX and RX status). 
-* With the successful connection of the ESP8266 module, you can use the function that you see in the header **ESP8266.h** to make a connection with a WiFi network or create one using the needed commands. To make sure a successful connection, please refer to the datasheet of the module. 
+* With the successful connection of the ESP8266 module, you can use the function that you see in the header `ESP8266.h` to make a connection with a WiFi network or create one using the needed commands. To make sure a successful connection, please refer to the datasheet of the module. 
 
 ## Deployment
 
-I am going to explain how the driver works and how you could create your own functions inside of the **ESP9266.c** file.
+I am going to explain how the driver works and how you could create your own functions inside of the `ESP9266.c` file.
 
 First of all, it uses the boolean type to ensure that the process inside of the function were finished without a problem. If you look inside of the created functions, they use a *timeout* for the response of the ESP8266 module, when this connection were not successful for any reason, the return value would be *false*. This makes easier the debugging process and it is one big help from the old version from nimaltd. 
 
 All the functions have a similar construction like this one: 
-```
+```C
 if(Wifi_SendString((char*)Wifi.TxBuffer)==false)
 	break;
 if(Wifi_WaitForString(_WIFI_WAIT_TIME_VERYHIGH,&result,3,"\r\nOK\r\n","\r\nERROR\r\n")==false)
